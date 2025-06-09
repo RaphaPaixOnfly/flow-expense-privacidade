@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flow Expense</title>
+    <script>
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        window.location.href = "https://testflight.apple.com/join/7r5KNF5e";
+      } else if (/android/i.test(userAgent)) {
+        window.location.href = "https://drive.google.com/file/d/1-Wto_hfq7iXTHoc1yBBoeF5DXG9VZkDe/view?usp=sharing";
+      } else {
+        window.location.href = "https://onfly.com.br";
+      }
+    </script>
+  </head>
+  <body>
+    Redirecionando...
+  </body>
+</html>
