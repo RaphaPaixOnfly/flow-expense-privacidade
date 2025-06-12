@@ -5,11 +5,18 @@
     <script>
       const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-      if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+      const isAppleDevice = /iPad|iPhone|iPod|Macintosh/.test(userAgent) && !window.MSStream;
+      const isAndroid = /android/i.test(userAgent);
+      const isWindows = /Windows NT/i.test(userAgent);
+
+      if (isAppleDevice) {
         window.location.href = "https://apps.apple.com/us/app/flow-expense/id6746204514";
-      } else if (/android/i.test(userAgent)) {
+      } else if (isAndroid) {
         window.location.href = "https://play.google.com/store/apps/details?id=com.onfly.flowexpense";
+      } else if (isWindows) {
+        window.location.href = "https://apps.apple.com/us/app/flow-expense/id6746204514";
       } else {
+        // fallback
         window.location.href = "https://apps.apple.com/us/app/flow-expense/id6746204514";
       }
     </script>
